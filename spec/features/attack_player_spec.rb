@@ -8,3 +8,4 @@ describe '# Attack Player', type: :feature do
     expect(page).to have_content 'Luke was attacked by James!!!'
   end
 end
+

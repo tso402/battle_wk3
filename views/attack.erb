@@ -1,7 +1,10 @@
 <div>
 <% if @attacked_player == @name1%>
+<% $player_1.attack %>
 <h1><%=@attacked_player%> was attacked by <%=@name2%>!!!</h1>
 <% else %>
+<% $player_2.attack %>
 <h1><%=@attacked_player%> was attacked by <%=@name1%>!!!</h1>
 <% end %>
+<a href="/play">Play</a>
 </div>

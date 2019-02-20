@@ -6,4 +6,11 @@ describe '# Hitpoints', type: :feature do
     sign_in_and_play
     expect(page).to have_content 'James 60 Hitpoints' && 'Luke 60 Hitpoints'
   end
+
+  it 'after a player is attacked their hp is reduced by 10' do
+    sign_in_and_play
+    attack_player_2
+    click_link "Play"
+    expect(page).to have_content 'James 60 Hitpoints' && 'Luke 50 Hitpoints'
+  end
 end
