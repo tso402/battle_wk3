@@ -11,6 +11,7 @@ describe '# Hitpoints', type: :feature do
     sign_in_and_play
     attack_player_2
     click_link "Play"
+    expect(page).not_to have_content 'Luke 60 Hitpoints'
     expect(page).to have_content 'James 60 Hitpoints' && 'Luke 50 Hitpoints'
   end
 end
