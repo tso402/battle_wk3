@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/game'
 
 class Battle < Sinatra::Base
 
@@ -26,8 +27,12 @@ class Battle < Sinatra::Base
 
   get '/attack' do
     @attacked_player = params[:name]
-    @name1 = $player_1.name
-    @name2 = $player_2.name
+    @player1 = $player_1
+    @player2 = $player_2
+    if @attacked_player == @player1.name
+      Game.new.attack(@player1)
+    else Game.new.attack(@player2)
+    end
     erb :attack
   end
 end
