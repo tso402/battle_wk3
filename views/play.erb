@@ -6,3 +6,10 @@
 <h1><%=@name1%> 60 Hitpoints</h1>
 <h1><%=@name2%> 60 Hitpoints</h1>
 </div>
+<div>
+<h1>Choose a player to attack</h1>
+<h1><%=@name1%> or <%=@name2%></h1>
+<form action='/attack'>
+Player to attack: <input type='text' name='name'>
+<input type="submit" value="Submit">
+</form>
