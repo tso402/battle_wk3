@@ -10,6 +10,14 @@ describe 'home page visit', type: :feature do
     expect(page).to have_content 'James' && 'Luke'
   end
 
+  it 'shows the specified player names with hitpoints' do
+    visit '/'
+    fill_in 'name1', with: 'James'
+    fill_in 'name2', with: 'Luke'
+    click_button('Submit')
+    expect(page).to have_content 'James 60 Hitpoints' && 'Luke 60 Hitpoints'
+  end
+
 
 
 
