@@ -1,3 +1,7 @@
 <div>
-<h1><%=@attacked_player%> was attacked!!!</h1>
+<% if @attacked_player == @name1%>
+<h1><%=@attacked_player%> was attacked by <%=@name2%>!!!</h1>
+<% else %>
+<h1><%=@attacked_player%> was attacked by <%=@name1%>!!!</h1>
+<% end %>
 </div>

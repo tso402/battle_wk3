@@ -6,6 +6,6 @@ describe '# Attack Player', type: :feature do
     sign_in_and_play
     fill_in 'name', with: 'Luke'
     click_button('Submit')
-    expect(page).to have_content 'Luke was attacked!!!'
+    expect(page).to have_content 'Luke was attacked by James!!!'
   end
 end
