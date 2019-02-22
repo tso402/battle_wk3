@@ -5,24 +5,28 @@ require "./lib/game"
 class Battle < Sinatra::Base
 enable :sessions
 
+  before do
+    @game = Game.instance
+  end
+
   get '/' do
     erb(:index)
   end
 
   post '/names' do
-    $game = Game.new(params[:name_one], params[:name_two])
+    @game = Game.start_game(params[:name_one], params[:name_two])
     redirect('/play')
   end
 
   get '/play' do
-    @player_one = $game.player_one
-    @player_two = $game.player_two
+    @player_one = @game.player_one
+    @player_two = @game.player_two
     erb(:play)
   end
 
   get '/attack' do
-    $game.attack
-    @player = $game.turn
+    @game.attack
+    @player = @game.turn
     erb :attack
   end
 
