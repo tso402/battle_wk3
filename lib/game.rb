@@ -6,7 +6,7 @@ class Game
   @current_game = Game.new(player1,player2)
   end
   
-  def self.instance
+  def self.current_game
     @current_game
   end
 

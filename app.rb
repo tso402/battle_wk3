@@ -6,7 +6,7 @@ class Battle < Sinatra::Base
 enable :sessions
 
   before do
-    @game = Game.instance
+    @game = Game.current_game
   end
 
   get '/' do
