@@ -1,8 +1,17 @@
-<div>
-<% if @attacked_player == @player1.name%>
-<h1><%=@attacked_player%> was attacked by <%=@player2.name%>!!!</h1>
+<% if @player.hit_points >0 %>
+
+  <h1><%= @player.name %> was attacked!!!</h1>
+
+  <form action="/play">
+  <button name='play' type='submit'>Ouch</button>
+  </form>
+
 <% else %>
-<h1><%=@attacked_player%> was attacked by <%=@player1.name%>!!!</h1>
+
+<h1><%= @player.name %> is dead!!!! D:</h1>
+
+<form action="/end">
+<button name='end' type='submit'>Finish</button>
+</form>
+
 <% end %>
-<a href="/play">Play</a>
-</div>

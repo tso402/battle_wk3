@@ -1,15 +1,16 @@
-<div>
-<h1>Player 1 is <%=@name1%></h1>
-<h1>Player 2 is <%=@name2%></h1>
-</div>
-<div>
-<h1><%=@name1%> <%=@hp1%> Hitpoints</h1>
-<h1><%=@name2%> <%=@hp2%> Hitpoints</h1>
-</div>
-<div>
-<h1>Choose a player to attack</h1>
-<h1><%=@name1%> or <%=@name2%></h1>
-<form action='/attack'>
-Player to attack: <input type='text' name='name'>
-<input type="submit" value="Submit">
+<%= @player_one.name %> vs. <%= @player_two.name %>
+
+<br/>
+<br/>
+
+<%= @player_one.name%>: <%= @player_one.hit_points %> HP
+
+<%= @player_two.name%>: <%= @player_two.hit_points %> HP
+<br/>
+<br/>
+It is now <%=$game.turn.name%>'s turn to attack
+<br/>
+<br/>
+<form action="/attack">
+<button name='attack' type='submit'>Attack</button>
 </form>
